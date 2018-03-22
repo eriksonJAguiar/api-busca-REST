@@ -1,0 +1,27 @@
+#divBusca{
+    background-color:rgb(212, 222, 224);
+    border:solid 2px rgb(11, 149, 241);
+    border-radius:10px;
+    position:absolute;
+    top:15%;
+    left:40%;
+    margin-top:-50px;
+    margin-left:-50px;
+}
+  
+#txtBusca{
+    float:left;
+    background-color:transparent;
+    padding-left:5px; 
+    font-size:18px;
+    border:none;
+    height:32px;
+    width:300px;
+}
+#resultados{
+    position:absolute;
+    top:25%;
+    left:40%;
+    margin-top:-50px;
+    margin-left:-50px;
+}
