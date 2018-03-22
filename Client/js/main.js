@@ -1,13 +1,14 @@
+var pesquisou = false;
 var createNewElements = function(rjson){
+    var myDiv = document.getElementById("resultados");
+    
     for(var index in rjson){
 
         if(rjson[index].titulo == undefined || rjson[index].url == undefined)
             continue;
 
-        var myDiv = document.getElementById("resultados");
         var p = document.createElement("p");
         var a = document.createElement("a");
-        var br = document.createElement("br")
 
         var pnode = document.createTextNode(rjson[index].titulo);
         var anode = document.createTextNode("["+ rjson[index].url +"]");
@@ -17,14 +18,17 @@ var createNewElements = function(rjson){
         a.appendChild(anode)
         myDiv.appendChild(p);
         myDiv.appendChild(a);
-        myDiv.appendChild(br);
     }
 
-    novaPesquisa = true;
+    pesquisou = true;
 }
 
 var search = function(){
 
+    if(pesquisou){
+        limpar();
+    }
+    
     var word_search = document.getElementById("txtBusca").value;
     var url = "http://localhost:8081/api/"+word_search.replace(" ","+");
     function httpGet() {
